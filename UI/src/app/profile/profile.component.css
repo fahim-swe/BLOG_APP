@@ -1,0 +1,36 @@
+.edit-profile{
+    display: flex;
+
+}
+
+.user-profile
+{
+    flex-basis: 30%;
+    margin-right: 2%;
+    top: 80px;
+    align-self: flex-start;
+    position: sticky;
+    background: #fff;
+    height: 70vh;
+    border-radius: 5px;
+}
+
+
+
+.user-post
+{
+    flex-basis: 70%;
+}
+
+@media only screen and (max-width: 850px) {
+    .edit-profile
+    {
+        flex-direction: column;
+    }
+
+    .user-profile{
+        position: static;
+        width: 100%;
+        margin: 20px auto;
+    }
+}

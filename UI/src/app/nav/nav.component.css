@@ -1,0 +1,41 @@
+.container
+{
+    padding: 0 5%;
+    height: 4rem;
+}
+.nav 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aliceblue;
+    position: fixed;
+    top:0;
+    width: 100%;
+}
+
+.nav-bar li {
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.nav-bar li:hover{
+    background: white;
+}
+
+.nav-bar li a 
+{
+    text-decoration: none;
+}
+
+.nav-bar li a::after
+{
+    color: aliceblue;
+}
+
+.nav-bar 
+{
+    display: flex;
+
+}

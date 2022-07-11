@@ -1,0 +1,20 @@
+<div class="profile">
+    <div class="profile-head">
+        <div>
+            <img src="{{'./assets/user.png'}}" >
+        </div>
+        <div>
+            <p>{{user.userName}}</p>
+            <p>Age: <span> {{user.dateOfBirth | date}}</span></p>
+        </div>
+    </div>
+
+    <div class="profile-content">
+        <div> Email: <span>{{user.email}}</span></div>
+        <div> Phone :<span> {{user.phone}} </span></div>
+        <div> Last Post: <span>60</span></div>
+        <div> Totall Post: <span>70</span></div>
+    </div>
+
+    <button class="btn">Update Profile</button>
+</div>

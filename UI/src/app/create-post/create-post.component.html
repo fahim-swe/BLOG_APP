@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>CREATE NEW POST</h1>
+
+<div>
+    <form [formGroup]="contentFrom">
+      <div class="post-input-container">
+        <textarea  
+            name=""
+            formControlName = "content"
+            rows="5" 
+            placeholder="What's on your main, Lorem?" ></textarea>
+    </div>
+    </form>
+</div>
+
+<div mat-dialog-content>
+    <section>
+        <div class="example-button-row">
+          <button (click)="createPost()" mat-raised-button color="accent">POST</button>
+        </div>
+      </section>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

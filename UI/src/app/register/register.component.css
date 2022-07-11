@@ -1,0 +1,27 @@
+mat-toolbar
+{
+    background-color: white;
+}
+.example-form
+{
+    margin: 0 auto;
+    width: 450px;
+    height: auto;
+    padding: 25px;
+    border: 10px;
+    background-color: #fff;
+}
+.example-full-width
+{
+    width: 100%;
+}
+
+.example-button-row
+{
+    margin-top: 15px;
+}
+
+.example-button-row button
+{
+    margin-right: 10px;
+}

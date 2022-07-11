@@ -1,0 +1,29 @@
+<div >
+
+    <div *ngFor="let post of Post; let i = index" class="post-container" >
+        <div class="post-header">
+            <div class="title">{{post.content.substring(0,50)}}</div>
+            <div class="author-info">
+                <div *ngIf="!checker"> Author: {{post.userName}}</div>
+                <div>Story Publish: <span>{{post.publishDate | date}}</span></div>
+            </div>
+        </div>
+        <div class="post-content">
+
+            <p> {{post.content.substring(50, 250)}}
+                <a style="color: red; cursor: pointer; text-decoration: underline;" (click)="continueReading(i)"> Continue Reading ... 
+                   
+                </a>
+                <span *ngIf="isReading && i == index" >{{Post[index].content.substring(250)}}</span>
+            </p>
+        </div>
+        <div *ngIf="checker">
+            <button class="btn">Edit Post</button>
+            <button (click)="deletePost(post.postId)" class="btn btn-delete">Delete</button>
+        </div>
+
+    </div>
+</div>
+
+
+
