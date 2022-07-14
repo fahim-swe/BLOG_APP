@@ -41,3 +41,4 @@
 /home/fahim/Documents/WEB_TECHNOLOGY/WEB_ASSIGNMENT/API/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /home/fahim/Documents/WEB_TECHNOLOGY/WEB_ASSIGNMENT/API/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
 /home/fahim/Documents/WEB_TECHNOLOGY/WEB_ASSIGNMENT/API/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
+/home/fahim/Documents/WEB_TECHNOLOGY/WEB_ASSIGNMENT/API/bin/Debug/net6.0/API.staticwebassets.runtime.json

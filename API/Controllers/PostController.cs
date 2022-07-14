@@ -58,7 +58,7 @@ namespace API.Controllers
 
             await _postService.NewPostAsync(post);
             
-            return Ok("SUCCESSFULLY POSTED");
+            return Ok(post);
         }
 
         [HttpDelete("{id}")]

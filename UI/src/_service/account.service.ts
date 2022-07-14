@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { map, ReplaySubject, take } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { UserToken } from 'src/_model/Token';
 import { user } from 'src/_model/user';
 
@@ -12,6 +13,8 @@ import { user } from 'src/_model/user';
   providedIn: 'root'
 })
 export class AccountService {
+
+  baseURI = environment.baseURI;
 
   private currentUserSource = new ReplaySubject<UserToken | undefined>(1);
   currentUser$ = this.currentUserSource.asObservable();
@@ -29,14 +32,14 @@ export class AccountService {
     const headers = { 'content-type': 'application/json'}  
     const body=JSON.stringify(content);
     console.log(body)
-    return this.http.post('https://localhost:7154/Post', body, this.httpOptions);
+    return this.http.post(this.baseURI + '/Post', body, this.httpOptions);
   }
 
   createAccount(model: any)
   {
     
     const body = JSON.stringify(model);
-    return this.http.post('https://localhost:7154/Account', body, this.httpOptions).pipe(
+    return this.http.post( this.baseURI + '/Account', body, this.httpOptions).pipe(
       map((res: any)=>{
          const user = res;
          if(user)
@@ -52,7 +55,7 @@ export class AccountService {
   {
     const body = JSON.stringify(model);
     // console.log(body);
-    return this.http.post('https://localhost:7154/Account/login', body, this.httpOptions).pipe(
+    return this.http.post( this.baseURI + '/Account/login', body, this.httpOptions).pipe(
       map((res: any)=>{
         const user = res;
         if(user){
@@ -64,7 +67,7 @@ export class AccountService {
     )
   }
 
-
+  
   logout()
   {
     localStorage.removeItem('user');
@@ -78,6 +81,6 @@ export class AccountService {
    
   getUser(username: string)
   {
-    return this.http.get<user>('https://localhost:7154/Account/' + username);
+    return this.http.get<user>(this.baseURI + '/Account/' + username);
   }
 }

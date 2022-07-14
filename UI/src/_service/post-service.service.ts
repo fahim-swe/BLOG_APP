@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { take } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { post } from 'src/_model/post';
 import { AccountService } from './account.service';
 
@@ -9,8 +10,7 @@ import { AccountService } from './account.service';
 })
 export class PostServiceService {
 
-  
-
+  baseURI = environment.baseURI;
   constructor(private account: AccountService, private http: HttpClient) { 
     
   }
@@ -24,21 +24,22 @@ export class PostServiceService {
     const headers = { 'content-type': 'application/json'}  
     const body=JSON.stringify(content);
     console.log(body)
-    return this.http.post('https://localhost:7154/Post', body, this.httpOptions);
+    return this.http.post(this.baseURI + '/Post', body, this.httpOptions);
   }
   
   getPost()
   {
-    return this.http.get<post[]>('https://localhost:7154/Post');
+    return this.http.get<post[]>( this.baseURI + '/Post');
   }
 
   getUserPost(username: any)
   {
-    return this.http.get<post[]>('https://localhost:7154/Post/' + username)
+    return this.http.get<post[]>( this.baseURI + '/Post/' + username)
   }
 
   deletePost(id: string)
   {
-    return this.http.delete<any>('https://localhost:7154/Post/' + id);
+    return this.http.delete<any>(this.baseURI + '/Post/' + id);
   }
 }
+

@@ -27,6 +27,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit()
   {
+    console
     if(this.registerForm.valid)
     {
       this.account.createAccount(this.registerForm.value).subscribe(res => {

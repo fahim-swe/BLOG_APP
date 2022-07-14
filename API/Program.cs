@@ -121,10 +121,15 @@ internal class Program
         app.UseAuthentication();
 
         app.UseAuthorization();
+
+        // Deploy app
+        app.UseDefaultFiles();
+        app.UseStaticFiles();
             
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapControllers();
+            endpoints.MapFallbackToController("Index", "Fallback");
         });
 
         app.Run();

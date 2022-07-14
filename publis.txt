@@ -1,0 +1,47 @@
+Actually publish the app and gain an understanding of how to: 
+1) prepare the app for publication
+2) what is consider before publishing 
+3) switching Dbs
+4) serving static content from the API server
+5) publishing to heroku(free!)
+
+
+
+1) prepare the angular app and serving this from the API server
+
+ng build
+dotnet watch run
+
+Microsoft.Hosting.Lifetime[14]
+      Now listening on: https://localhost:7154 (backend)
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5227(font-end)
+
+
+** Adding a fallback Controller
+namespace API.Controllers
+{
+    public class FallbackController : Controller
+    {
+        public ActionResult Index()
+        {
+            return PhysicalFile(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "index.html"),
+                    "text/HTML");
+        }
+    }
+}
+
+// Program.cs 
+ endpoints.MapFallbackToController("Index", "Fallback");
+
+
+** Creating an angular productions build 
+ng build --prod
+
+
+** switching the DB server to postgress
+go to docket hub website 
+https://hub.docker.com/_/postgres
+
+start a postgress instance 
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres

@@ -14,7 +14,7 @@ namespace API.Helper
                 throw new ArgumentNullException(nameof(principal));
             return principal.FindFirstValue(ClaimTypes.Name);
         }
-
+        
         public static string GetLoggedInUserId(this ClaimsPrincipal principal)
         {
             if(principal == null)
